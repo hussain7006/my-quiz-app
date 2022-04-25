@@ -1,38 +1,140 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: lightblue;
+}
+
 .App {
-  text-align: center;
+    height: 95vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quizDiv {
+    background-color: #06113C;
+    color: white;
+    border: 2px solid;
+    width: 70%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.top>h1 {
+    margin-right: 15px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.maxQo {
+    font-weight: bold;
+    font-size: large;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mid {
+    flex: 0.6;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 10px;
+
+}
+
+.mid>h3 {
+    font-size: 25px;
+    font-weight: 450;
+}
+
+.end {
+    flex: 0.4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 10px; */
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2px;
+    height: 100%;
+
+}
+
+.options>div {
+    margin-bottom: 15px;
+}
+
+.options>div>button {
+    background-color: #15a81cda;
+    color: white;
+    width: 200px;
+    margin: 2px;
+    border-radius: 10px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.options>div>button:hover {
+    background-color: green;
+}
+
+@media only screen and (max-width: 1440px) {
+    .quizDiv {
+        width: 44%;
+        height: 60%;
+    }
+}
+
+@media only screen and (max-width: 958px) {
+    .quizDiv {
+        width: 44%;
+        height: 70%;
+    }
+}
+
+@media only screen and (max-width: 471px) {
+
+
+    .options>div>button {
+        width: 150px;
+        /* height: 35px; */
+    }
+    .mid>h3 {
+        font-size: 21px;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 452px) {
+    body{
+        background-color: green;
+    }
+
+    .top>h1 {
+        font-size: 20px;
+    }
+    
 }
