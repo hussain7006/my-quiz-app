@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import Score from "./Components/Score"
+import Questions from "./Components/Questions"
 
 function App() {
   const [item, setItem] = useState(0);
@@ -135,10 +137,10 @@ function App() {
     setItem(item + 1)
     // console.log("data.questions[item].correctIndex: ", data.questions[item].correctIndex)
     // console.log("index: ", index + 1)
-    data.questions[item].correctIndex === index + 1 && setScore(score + 1) 
+    data.questions[item].correctIndex === index + 1 && setScore(score + 1)
   }
 
-  let reset = ()=>{
+  let reset = () => {
     setItem(0);
     setScore(0);
   }
@@ -146,27 +148,11 @@ function App() {
 
   return (
     (item !== data.questions.length) ?
-      (<div className="App">
-        <div className="quizDiv">
-          <div className="top">
-            <h1>Question</h1><span>{item + 1}/<span className='maxQo'>{data.questions.length}</span></span>
-          </div>
-          <div className="mid">
-            <h3>{data.questions[item].question}</h3>
-          </div>
-          <div className="end">
-            <div className="options">
-              {data.questions[item].answers.map((e, i) => <div key={i}><button onClick={() => buttonHandler(i)}>{e}</button></div>)}
-            </div>
-          </div>
-        </div>
-
-      </div>) :
       (
-        <div className='scoreDiv'>
-          <h1>Your score is :  {score}</h1>
-          <button onClick={reset}>Start Again</button>
-        </div>
+        <Questions index={item} questions={data.questions} selectOption={buttonHandler} />
+      ) :
+      (
+        <Score score={score} reset={reset} />
       )
   );
 }
